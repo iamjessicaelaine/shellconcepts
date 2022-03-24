@@ -12,12 +12,10 @@ int main(int ac, char **av)
 {
 	int x = 1; /* moves us through our array of strings */
 
-	while (x != '\0')
+	while (av[x] != NULL)
 	{
 		printf("%s\n", av[x]);
 		x++;
-		if (x == '\0')
-			exit;
 	}
 	return (0);
 }
