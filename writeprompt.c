@@ -5,7 +5,7 @@
 int main(void)
 {
 	char *buffer; /* stores what getline reads */
-	size_t bufsize = 1024; 
+	size_t bufsize = 1024;
 	size_t characters;
 
 	buffer = malloc(bufsize * sizeof(char));
@@ -13,9 +13,10 @@ int main(void)
 	{
 		return (0);
 	}
-	write(STDOUT_FILENO, "$ \n", 2);
+	write(STDOUT_FILENO, "$ ", 2);
 	characters = getline(&buffer, &bufsize, stdin);
-	write(STDOUT_FILENO, buffer, characters);
+	write(STDOUT_FILENO, "$ \n", 3);
+	/* write(STDOUT_FILENO, buffer, characters); */
 	free(buffer);
 	return (0);
 }
